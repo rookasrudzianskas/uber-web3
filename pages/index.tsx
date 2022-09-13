@@ -20,7 +20,7 @@ const Home: NextPage = () => {
         </Head>
         <Navbar />
         <div className={style.main}>
-            {/*<Map />*/}
+            <Map />
         </div>
         <div className={style.rideRequestContainer}>
             <div className={style.rideRequest}>
