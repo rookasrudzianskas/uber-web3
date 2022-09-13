@@ -34,9 +34,10 @@ const Navbar = () => {
                     />
                 </div>
                 {/*{currentAccount ? (*/}
-                {/*    <div>*/}
-                {/*        {currentAccount.slice(0, 6)}...{currentAccount.slice(39)}*/}
-                {/*    </div>*/}
+                    <div>
+                        {/*{currentAccount.slice(0, 6)}...{currentAccount.slice(39)}*/}
+                        0x1234567890
+                    </div>
                 {/*) : (*/}
                 {/*    <div className={style.loginButton} onClick={() => connectWallet()}>*/}
                 {/*        <BsPerson />*/}
