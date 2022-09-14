@@ -54,12 +54,12 @@ const RideSelector = () => {
                         //     setPrice(((basePrice / 10 ** 5) * car.priceMultiplier).toFixed(5))
                         // }}
                     >
-                        {/*<Image*/}
-                        {/*    src={car.iconUrl}*/}
-                        {/*    className={style.carImage}*/}
-                        {/*    height={50}*/}
-                        {/*    width={50}*/}
-                        {/*/>*/}
+                        <Image
+                            src={car.iconUrl}
+                            className={style.carImage}
+                            height={50}
+                            width={50}
+                        />
                         <div className={style.carDetails}>
                             <div className={style.service}>{car.service}</div>
                             <div className={style.time}>5 min away</div>
