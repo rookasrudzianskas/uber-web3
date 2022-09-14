@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Image from "next/image";
 import ethLogo from '../assets/eth-logo.png'
+import {UberContext} from "../context/uberContext";
 
 const style = {
     wrapper: `h-full flex flex-col`,
@@ -18,8 +19,11 @@ const style = {
 
 const RideSelector = () => {
     const [carList, setCarList] = useState([])
-    // const { selectedRide, setSelectedRide, setPrice, basePrice } =
-    //     useContext(UberContext)
+    const {
+        selectedRide,
+        setSelectedRide,
+        setPrice, basePrice = 0.5 } =
+        useContext(UberContext)
 
 
     useEffect(() => {
@@ -29,7 +33,7 @@ const RideSelector = () => {
 
                 const data = await response.json()
                 setCarList(data.data)
-                // setSelectedRide(data.data[0])
+                setSelectedRide(data.data[0])
             } catch (error) {
                 console.error(error)
             }
@@ -44,15 +48,15 @@ const RideSelector = () => {
                 {carList.map((car, index) => (
                     <div
                         key={index}
-                        // className={`${
-                        //     selectedRide.service === car.service
-                        //         ? style.selectedCar
-                        //         : style.car
-                        // }`}
-                        // onClick={() => {
-                        //     setSelectedRide(car)
-                        //     setPrice(((basePrice / 10 ** 5) * car.priceMultiplier).toFixed(5))
-                        // }}
+                        className={`${
+                            selectedRide.service === car.service
+                                ? style.selectedCar
+                                : style.car
+                        }`}
+                        onClick={() => {
+                            setSelectedRide(car)
+                            setPrice(((basePrice / 10 ** 5) * car.priceMultiplier).toFixed(5))
+                        }}
                     >
                         <Image
                             src={car.iconUrl}
@@ -66,7 +70,7 @@ const RideSelector = () => {
                         </div>
                         <div className={style.priceContainer}>
                             <div className={style.price}>
-                                {/*{((basePrice / 10 ** 5) * car.priceMultiplier).toFixed(5)}*/}
+                                {((basePrice / 10 ** 5) * car.priceMultiplier).toFixed(5)}
                             </div>
                             <Image src={ethLogo} height={25} width={40} />
                         </div>

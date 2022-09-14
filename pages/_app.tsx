@@ -1,8 +1,16 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import 'mapbox-gl/dist/mapbox-gl.css'
+import { UberProvider } from '../context/uberContext'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+// @ts-ignore
+function MyApp({ Component, pageProps }) {
+    return (
+        <UberProvider>
+            <Component {...pageProps} />
+        </UberProvider>
+    )
 }
 
-export default MyApp
+// @ts-ignore
+export default MyApp;
+//@ts-ignore
