@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Image from "next/image";
 import ethLogo from '../assets/eth-logo.png'
 
@@ -20,6 +20,22 @@ const RideSelector = () => {
     const [carList, setCarList] = useState([])
     // const { selectedRide, setSelectedRide, setPrice, basePrice } =
     //     useContext(UberContext)
+
+
+    useEffect(() => {
+        ;(async () => {
+            try {
+                const response = await fetch('/api/db/getRideTypes')
+
+                const data = await response.json()
+                setCarList(data.data)
+                // setSelectedRide(data.data[0])
+            } catch (error) {
+                console.error(error)
+            }
+        })()
+    }, [])
+
 
     return (
         <div className={style.wrapper}>
