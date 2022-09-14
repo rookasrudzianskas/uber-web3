@@ -4,6 +4,8 @@ import Image from 'next/image'
 import Navbar from '../components/Navbar';
 import Map from '../components/Map';
 import LocationSelector from '../components/LocationSelector';
+import Confirm from '../components/Confirm';
+
 
 const style = {
     wrapper: `h-screen w-screen flex flex-col`,
@@ -27,7 +29,7 @@ const Home: NextPage = () => {
         <div className={style.rideRequestContainer}>
             <div className={style.rideRequest}>
                 <LocationSelector />
-                {/*<Confirm />*/}
+                <Confirm />
             </div>
         </div>
     </div>
