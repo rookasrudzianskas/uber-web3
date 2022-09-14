@@ -1,4 +1,5 @@
 import React from 'react';
+import RideSelector from "./RideSelector";
 
 const style = {
     wrapper: `flex-1 h-full flex flex-col justify-between`,
@@ -8,10 +9,27 @@ const style = {
 }
 
 const Confirm = () => {
-    return (
+    // const {
+    //     currentAccount,
+    //     pickup,
+    //     dropoff,
+    //     price,
+    //     selectedRide,
+    //     pickupCoordinates,
+    //     dropoffCoordinates,
+    //     metamask,
+    // } = useContext(UberContext)
+
+    const storeTripDetails = async (pickup, dropoff) => {
+
+    }
+
+        return (
         <div className={style.wrapper}>
             <div className={style.rideSelectorContainer}>
-                {/*{pickupCoordinates && dropoffCoordinates && <RideSelector />}*/}
+                {/*{pickupCoordinates && dropoffCoordinates && */}
+                    <RideSelector />
+                {/*// }*/}
             </div>
             <div className={style.confirmButtonContainer}>
                 <div className={style.confirmButtonContainer}>
